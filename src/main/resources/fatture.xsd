@@ -1,0 +1,289 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://fatture.portale_cy.com/"
+	targetNamespace="http://fatture.portale_cy.com/"
+	elementFormDefault="qualified">
+
+	<xs:element name="TestConnectionFatturaRequest"
+		type="xs:string" />
+
+	<xs:element name="TestConnectionFatturaResponse"
+		type="xs:string" />
+
+	<xs:element name="TestConnectionValutaRequest"
+		type="xs:string" />
+
+	<xs:element name="TestConnectionValutaResponse"
+		type="xs:string" />
+
+	<xs:element name="CreateFatturaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="numero" type="xs:string" />
+				<xs:element name="data" type="xs:dateTime" />
+				<xs:element name="anno" type="xs:string" />
+				<xs:element name="importo" type="xs:double" />
+				<xs:element name="valuta" type="xs:string" />
+				<xs:element name="paese" type="xs:string" />
+				<xs:element name="descrizione" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CreateFatturaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fattura" type="tns:Fattura" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetFatturaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetFatturaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fattura" type="tns:Fattura" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteFatturaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteFatturaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+				<xs:element name="success" type="xs:boolean" />
+				<xs:element name="statusCode" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="PutFatturaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fatturaId" type="xs:long" />
+				<xs:element name="numero" type="xs:string" />
+				<xs:element name="data" type="xs:dateTime" />
+				<xs:element name="anno" type="xs:string" />
+				<xs:element name="importo" type="xs:double" />
+				<xs:element name="valuta" type="xs:string" />
+				<xs:element name="paese" type="xs:string" />
+				<xs:element name="descrizione" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="PutFatturaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Fattura"></xs:element>
+				<xs:element name="message" type="xs:string" />
+				<xs:element name="success" type="xs:boolean" />
+				<xs:element name="statusCode" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FindAllFattureRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FindAllFattureResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="statusCode" type="xs:int" />
+				<xs:element name="fatture" type="tns:Fattura"
+					minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteAllFattureRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteAllFattureResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+				<xs:element name="statusCode" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CreateValutaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Valutaid" type="xs:long" />
+				<xs:element name="valutaPrincipale" type="xs:string" />
+				<xs:element name="cambioEUR" type="xs:double" />
+				<xs:element name="cambioUSD" type="xs:double" />
+				<xs:element name="cambioGBD" type="xs:double" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CreateValutaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="valuta" type="tns:Valuta" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetValutaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="cambioValutaid" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetValutaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="cambiovaluta" type="tns:Valuta" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteValutaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="valutaId" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteValutaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+				<xs:element name="success" type="xs:boolean" />
+				<xs:element name="statusCode" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="PutValutaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="valutaId" type="xs:long" />
+				<xs:element name="valutaPrincipale" type="xs:string" />
+				<xs:element name="cambioEUR" type="xs:double" />
+				<xs:element name="cambioUSD" type="xs:double" />
+				<xs:element name="cambioGBD" type="xs:double" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="PutValutaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Valuta"></xs:element>
+				<xs:element name="message" type="xs:string" />
+				<xs:element name="success" type="xs:boolean" />
+				<xs:element name="statusCode" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FindAllValuteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FindAllValuteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="statusCode" type="xs:int" />
+				<xs:element name="fatture" type="tns:Fattura"
+					minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteAllValuteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteAllValuteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+				<xs:element name="statusCode" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="LoadDataRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="LoadDataResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fatture" type="tns:Fattura"
+					minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="valute" type="tns:Valuta" minOccurs="0"
+					maxOccurs="unbounded" />
+				<xs:element name="statusCode" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Fattura">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="numero" type="xs:string" />
+			<xs:element name="data" type="xs:dateTime" />
+			<xs:element name="anno" type="xs:string" />
+			<xs:element name="importo" type="xs:double" />
+			<xs:element name="valuta" type="xs:string" />
+			<xs:element name="paese" type="xs:string" />
+			<xs:element name="descrizione" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Valuta">
+		<xs:sequence>
+			<xs:element name="Valutaid" type="xs:long" />
+			<xs:element name="valutaPrincipale" type="xs:string" />
+			<xs:element name="cambioEUR" type="xs:double" />
+			<xs:element name="cambioUSD" type="xs:double" />
+			<xs:element name="cambioGBD" type="xs:double" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

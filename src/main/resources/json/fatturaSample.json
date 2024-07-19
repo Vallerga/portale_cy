@@ -1,0 +1,102 @@
+[
+	{
+		"fatturaId": 1,
+		"numero": "F001",
+		"data": "2021-01-15",
+		"anno": "2021",
+		"importo": 1200.00,
+		"valuta": "EUR",
+		"paese": "Italia",
+		"descrizione": "Consulenza IT"
+	},
+	{
+		"fatturaId": 2,
+		"numero": "F002",
+		"data": "2022-03-20",
+		"anno": "2022",
+		"importo": 1500.00,
+		"valuta": "USD",
+		"paese": "USA",
+		"descrizione": "Sviluppo Software"
+	},
+	{
+		"fatturaId": 3,
+		"numero": "F003",
+		"data": "2023-05-30",
+		"anno": "2023",
+		"importo": 1300.00,
+		"valuta": "GBP",
+		"paese": "Regno Unito",
+		"descrizione": "Supporto Tecnico"
+	},
+	{
+		"fatturaId": 4,
+		"numero": "F004",
+		"data": "2021-07-18",
+		"anno": "2021",
+		"importo": 2000.00,
+		"valuta": "EUR",
+		"paese": "Italia",
+		"descrizione": "Consulenza Strategica"
+	},
+	{
+		"fatturaId": 5,
+		"numero": "F005",
+		"data": "2022-09-25",
+		"anno": "2022",
+		"importo": 2200.00,
+		"valuta": "USD",
+		"paese": "Canada",
+		"descrizione": "Analisi dei Dati"
+	},
+	{
+		"fatturaId": 6,
+		"numero": "F006",
+		"data": "2023-11-11",
+		"anno": "2023",
+		"importo": 1600.00,
+		"valuta": "GBP",
+		"paese": "Regno Unito",
+		"descrizione": "Progettazione Grafica"
+	},
+	{
+		"fatturaId": 7,
+		"numero": "F007",
+		"data": "2021-12-05",
+		"anno": "2021",
+		"importo": 2500.00,
+		"valuta": "EUR",
+		"paese": "Italia",
+		"descrizione": "Servizi Legali"
+	},
+	{
+		"fatturaId": 8,
+		"numero": "F008",
+		"data": "2022-02-28",
+		"anno": "2022",
+		"importo": 1800.00,
+		"valuta": "USD",
+		"paese": "USA",
+		"descrizione": "Sviluppo Mobile"
+	},
+	{
+		"fatturaId": 9,
+		"numero": "F009",
+		"data": "2023-08-23",
+		"anno": "2023",
+		"importo": 2100.00,
+		"valuta": "GBP",
+		"paese": "Canada",
+		"descrizione": "Test di Sicurezza"
+	},
+	{
+		"fatturaId": 10,
+		"numero": "F010",
+		"data": "2021-04-15",
+		"anno": "2021",
+		"importo": 1400.00,
+		"valuta": "EUR",
+		"paese": "Francia",
+		"descrizione": "Formazione Aziendale"
+	}
+]

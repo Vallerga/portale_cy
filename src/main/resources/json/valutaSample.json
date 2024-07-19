@@ -1,0 +1,23 @@
+[
+	{
+		"valutaId": 1,
+		"valutaPrincipale": "EUR",
+		"cambioEUR": 1.00,
+		"cambioUSD": 1.10,
+		"cambioGBD": 0.85
+	},
+	{
+		"valutaId": 2,
+		"valutaPrincipale": "USD",
+		"cambioEUR": 0.91,
+		"cambioUSD": 1.00,
+		"cambioGBD": 0.78
+	},
+	{
+		"valutaId": 3,
+		"valutaPrincipale": "GBP",
+		"cambioEUR": 1.18,
+		"cambioUSD": 1.28,
+		"cambioGBD": 1.00
+	}
+]
