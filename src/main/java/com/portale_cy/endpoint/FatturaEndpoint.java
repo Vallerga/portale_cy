@@ -24,7 +24,11 @@ import com.portale_cy.controller.fattura.LoadDataRequest;
 import com.portale_cy.controller.fattura.LoadDataResponse;
 import com.portale_cy.controller.fattura.PutFatturaRequest;
 import com.portale_cy.controller.fattura.PutFatturaResponse;
+import com.portale_cy.controller.fattura.SummaryRequest;
+import com.portale_cy.controller.fattura.SummaryResponse;
 import com.portale_cy.db.model.Fattura;
+import com.portale_cy.db.model.FilteredEntry;
+import com.portale_cy.db.model.GroupedEntry;
 import com.portale_cy.db.model.Valuta;
 import com.portale_cy.service.FatturaService;
 import com.portale_cy.service.ValutaService;
@@ -155,4 +159,51 @@ public class FatturaEndpoint {
 
 		return response;
 	}
+
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "SummaryRequest")
+	@ResponsePayload
+	public SummaryResponse summary(@RequestPayload SummaryRequest summaryRequest) {
+		SummaryResponse response = new SummaryResponse();
+
+		try {
+			List<FilteredEntry> filteredEntries = fatturaService.summaryFilterBy(summaryRequest.getFilterBy(),
+					summaryRequest.getFilterValue());
+System.out.println("FilterBy: " + summaryRequest.getFilterBy() + " groupBy: " + summaryRequest.getGroupBy());
+			List<GroupedEntry> groupedEntries = fatturaService.summaryGroupBy(summaryRequest.getGroupBy(),
+					filteredEntries, summaryRequest.getValutaSelected());
+//			for (FilteredEntry fe : filteredEntries) {
+//				System.out.println(fe);
+//			}
+//			for (GroupedEntry ge : groupedEntries) {
+//				System.out.println(ge);
+//			}
+			response.setFilteredEntries(filteredEntries);
+			response.setGroupedEntries(groupedEntries);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return response;
+	}
+
+//	@GetMapping("/summary")
+//	@ResponseStatus(HttpStatus.FOUND)
+//	public ResponseEntity<SummaryResponse> summary(
+//			@RequestParam String filterby, @RequestParam String value,
+//			@RequestParam String groupby, @RequestParam String currency) {
+//		try {
+//			List<FilteredEntry> filteredEntries = invoiceService
+//					.summaryFilterBy(filterby, value);
+//			List<GroupedEntry> groupedEntries = invoiceService
+//					.summaryGroupBy(groupby, filteredEntries, currency);
+//			SummaryResponse response = new SummaryResponse(filteredEntries,
+//					groupedEntries);
+//			return ResponseEntity.ok(response);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+//					.build();
+//		}
+//	}
 }

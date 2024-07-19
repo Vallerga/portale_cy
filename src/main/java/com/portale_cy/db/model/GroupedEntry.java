@@ -1,46 +1,53 @@
 package com.portale_cy.db.model;
 
 public class GroupedEntry {
-	private String groupBy;
-	private String groupValue;
-	private Double amount;
-	private Integer numInvoice;
+	private String raggruppatoDa;
+	private String valoreRaggruppamento;
+	private Double importo;
+	private Integer numFatture;
 
-	public String getGroupBy() {
-		return groupBy;
+	public String getRaggruppatoDa() {
+		return raggruppatoDa;
 	}
 
-	public void setGroupBy(String groupBy) {
-		this.groupBy = groupBy;
+	public GroupedEntry(String raggruppatoDa, String valoreRaggruppamento, Double importo, Integer numFatture) {
+		this.raggruppatoDa = raggruppatoDa;
+		this.valoreRaggruppamento = valoreRaggruppamento;
+		this.importo = importo;
+		this.numFatture = numFatture;
 	}
 
-	public String getGroupValue() {
-		return groupValue;
+	public void setRaggruppatoDa(String raggruppatoDa) {
+		this.raggruppatoDa = raggruppatoDa;
 	}
 
-	public void setGroupValue(String groupValue) {
-		this.groupValue = groupValue;
+	public String getValoreRaggruppamento() {
+		return valoreRaggruppamento;
 	}
 
-	public Double getAmount() {
-		return amount;
+	public void setValoreRaggruppamento(String valoreRaggruppamento) {
+		this.valoreRaggruppamento = valoreRaggruppamento;
 	}
 
-	public void setAmount(Double amount) {
-		this.amount = amount;
+	public Double getImporto() {
+		return importo;
 	}
 
-	public Integer getNumInvoice() {
-		return numInvoice;
+	public void setImporto(Double importo) {
+		this.importo = importo;
 	}
 
-	public void setNumInvoice(Integer numInvoice) {
-		this.numInvoice = numInvoice;
+	public Integer getNumFatture() {
+		return numFatture;
+	}
+
+	public void setNumFatture(Integer numFatture) {
+		this.numFatture = numFatture;
 	}
 
 	@Override
 	public String toString() {
-		return "GroupedEntry [groupBy=" + groupBy + ", groupValue=" + groupValue + ", amount=" + amount + ", numInvoice="
-				+ numInvoice + "]";
+		return "GroupedEntry [raggruppatoDa=" + raggruppatoDa + ", valoreRaggruppamento=" + valoreRaggruppamento
+				+ ", importo=" + importo + ", numFatture=" + numFatture + "]";
 	}
 }

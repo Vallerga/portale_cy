@@ -263,6 +263,29 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:element name="SummaryRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="filterBy" type="xs:string" />
+				<xs:element name="filterValue" type="xs:string" />
+				<xs:element name="groupBy" type="xs:string" />
+				<xs:element name="valutaSelected" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="SummaryResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="filteredEntry" type="tns:FilteredEntry"
+					minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="groupedEntry" type="tns:GroupedEntry" minOccurs="0"
+					maxOccurs="unbounded" />
+				<xs:element name="statusCode" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 	<xs:complexType name="Fattura">
 		<xs:sequence>
 			<xs:element name="id" type="xs:long" />
@@ -283,6 +306,27 @@
 			<xs:element name="cambioEUR" type="xs:double" />
 			<xs:element name="cambioUSD" type="xs:double" />
 			<xs:element name="cambioGBD" type="xs:double" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FilteredEntry">
+		<xs:sequence>
+			<xs:element name="numero" type="xs:string" />
+			<xs:element name="data" type="xs:dateTime" />
+			<xs:element name="anno" type="xs:string" />
+			<xs:element name="importo" type="xs:double" />
+			<xs:element name="valuta" type="xs:string" />
+			<xs:element name="paese" type="xs:string" />
+			<xs:element name="descrizione" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GroupedEntry">
+		<xs:sequence>
+			<xs:element name="raggruppatoDa" type="xs:string" />
+			<xs:element name="valoreRaggruppamento" type="xs:string" />
+			<xs:element name="importo" type="xs:double" />
+			<xs:element name="numFatture" type="xs:integer" />
 		</xs:sequence>
 	</xs:complexType>
 

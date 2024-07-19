@@ -2,30 +2,21 @@ package com.portale_cy.db.model;
 
 import java.util.Date;
 
-
 public class FilteredEntry {
-	private String number;
-	private Integer invoiceYear;
+	private String numero;
 	private Date data;
-	private Double amount;
-	private String currency;
-	private String description;
-	private String country;
-	
-	public String getNumber() {
-		return number;
+	private String anno;
+	private Double importo;
+	private String valuta;
+	private String paese;
+	private String descrizione;
+
+	public String getNumero() {
+		return numero;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
-	}
-
-	public Integer getInvoiceYear() {
-		return invoiceYear;
-	}
-
-	public void setInvoiceYear(Integer invoiceYear) {
-		this.invoiceYear = invoiceYear;
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
 
 	public Date getData() {
@@ -36,41 +27,49 @@ public class FilteredEntry {
 		this.data = data;
 	}
 
-	public Double getAmount() {
-		return amount;
+	public String getAnno() {
+		return anno;
 	}
 
-	public void setAmount(Double amount) {
-		this.amount = amount;
+	public void setAnno(String anno) {
+		this.anno = anno;
 	}
 
-	public String getCurrency() {
-		return currency;
+	public Double getImporto() {
+		return importo;
 	}
 
-	public void setCurrency(String currency) {
-		this.currency = currency;
+	public void setImporto(Double importo) {
+		this.importo = importo;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getValuta() {
+		return valuta;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setValuta(String valuta) {
+		this.valuta = valuta;
 	}
 
-	public String getCountry() {
-		return country;
+	public String getPaese() {
+		return paese;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public void setPaese(String paese) {
+		this.paese = paese;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
 	}
 
 	@Override
 	public String toString() {
-		return "FilteredEntry [number=" + number + ", invoiceYear=" + invoiceYear + ", data=" + data + ", amount="
-				+ amount + ", currency=" + currency + ", description=" + description + ", country=" + country + "]";
+		return "FilteredEntry [numero=" + numero + ", data=" + data + ", anno=" + anno + ", importo=" + importo
+				+ ", valuta=" + valuta + ", paese=" + paese + ", descrizione=" + descrizione + "]";
 	}
 }

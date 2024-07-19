@@ -1,7 +1,16 @@
-package com.portale_cy.db.model;
+package com.portale_cy.controller.fattura;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.portale_cy.db.model.FilteredEntry;
+import com.portale_cy.db.model.GroupedEntry;
+
+@XmlRootElement(name = "SummaryResponse", namespace = "http://fatture.portale_cy.com/")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class SummaryResponse {
 	private List<FilteredEntry> filteredEntries;
 	private List<GroupedEntry> groupedEntries;
